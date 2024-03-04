@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_modules",
+  "info": {
+    "singularName": "lms-module",
+    "pluralName": "lms-modules",
+    "displayName": "LmsModule"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "lms_courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-course.lms-course",
+      "mappedBy": "lms_module"
+    },
+    "lms_lessons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-lesson.lms-lesson",
+      "mappedBy": "lms_module"
+    }
+  }
+}
